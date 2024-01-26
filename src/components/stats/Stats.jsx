@@ -10,7 +10,10 @@ class Statistics extends Component {
   };
   static propTypes = {
     stat: PropTypes.object.isRequired,
-    total: PropTypes.number,
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired
   };
 
   render() {
