@@ -1,19 +1,20 @@
 import css from './Statistics.module.css';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid';
 
 class Statistics extends Component {
   static defaultProps = {
-    stat: { good: 0, neutral: 0, bad: 0 },
+    good: 0,
+    neutral: 0,
+    bad: 0,
     total: 0,
   };
   static propTypes = {
-    stat: PropTypes.object.isRequired,
     good: PropTypes.number.isRequired,
     neutral: PropTypes.number.isRequired,
     bad: PropTypes.number.isRequired,
-    total: PropTypes.number.isRequired
+    total: PropTypes.number.isRequired,
   };
 
   render() {
@@ -24,10 +25,7 @@ class Statistics extends Component {
           {Object.entries(this.props.stat).map(([key, value]) => {
             return (
               <li className={css.statistics__item} key={nanoid()}>
-                <span
-                  className={css.statistics__name}
-                  key={nanoid()}
-                >
+                <span className={css.statistics__name} key={nanoid()}>
                   {key}:{' '}
                 </span>
                 <span key={nanoid()}>{value}</span>
@@ -40,9 +38,7 @@ class Statistics extends Component {
           </li>
           <li className={css.statistics__item} key={nanoid()}>
             <span key={nanoid()}>Positive feedback: </span>
-            <span key={nanoid()}>
-              {this.props.positivePercentage}%
-            </span>
+            <span key={nanoid()}>{this.props.positivePercentage}%</span>
           </li>
         </ul>
       </div>

@@ -47,15 +47,14 @@ class App extends Component {
     return (
       <div className="App">
         <section>
-          <Feedback
-            options={btnNames}
-            onLeaveFeedback={this.onLeaveFeedback}
-          />
+          <Feedback options={btnNames} onLeaveFeedback={this.onLeaveFeedback} />
           {this.countZero() ? (
             <Notification message="No feedback given" />
           ) : (
             <Statistics
-              stat={this.state}
+              good={good}
+              neutral={neutral}
+              bad={bad}
               total={this.countTotalFeedback()}
               positivePercentage={this.countPositiveFeedbackPercentage()}
             />
