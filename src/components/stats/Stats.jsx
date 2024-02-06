@@ -11,12 +11,9 @@ class Statistics extends Component {
     total: 0,
   };
   static propTypes = {
-    good: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
-    total: PropTypes.number.isRequired,
+    stat: PropTypes.object.isRequired,
+    total: PropTypes.number,
   };
-
   render() {
     return (
       <div className={css.statistics}>
